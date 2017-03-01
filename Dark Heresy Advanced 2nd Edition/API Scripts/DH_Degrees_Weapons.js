@@ -14,7 +14,7 @@ var Roll40k = Roll40k || (function(){
 
     var rollResultForRoll40k = function (token, attribute, modifier) {
         var roll = randomInteger(100);
-        var modTarget = parseInt(attribute) + parseInt(modifier);
+        var modTarget = parseInt(attribute) + parseInt(Math.min(60,Math.max(-60, modifier ) ));
         var output1 = token + ' has a modified target of <B>' + modTarget + '</B> and rolled a <B>' + roll + '</B>. ';
         var output2, degOfSuc;
         //Form output message based on result

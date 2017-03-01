@@ -25,7 +25,7 @@
 var rollResultForSkill40k = function (token, attribute, skillBn1, skillBn2, skillBn3, skillBn4, modifier) {
 	var roll = randomInteger(100);
 	var skillBonus = parseInt(skillBn1) + parseInt(skillBn2) + parseInt(skillBn3) + parseInt(skillBn4) - 20;
-	var modTarget = parseInt(attribute) + skillBonus + parseInt(modifier);
+	var modTarget = parseInt(attribute) + skillBonus + parseInt(Math.min(60,Math.max(-60, modifier ) ));
 	var output1 = token,
 		output2, degOfSuc;
 
